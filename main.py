@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile #import class FastAPI() từ thư viện fastapi
+from fastapi import FastAPI #import class FastAPI() từ thư viện fastapi
 import requests
 app = FastAPI() # gọi constructor và gán vào biến app
 
