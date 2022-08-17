@@ -59,7 +59,8 @@ def get_price_main():
     token = token.split('-')[0]
     url = "https://pricefeedfastapi.herokuapp.com/"+token
     response = requests.get(url).json()
-    price_median = response['']
+    price_median = response['price_median']
+    price_vwa = response['price_volume_weighted_average']
     timest = time.time()
     avg = {
         'source' : 'Noise',
