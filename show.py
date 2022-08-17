@@ -15,7 +15,7 @@ def get_price_min(token):
         'timestamp' : timest,
         'price' : response,
     }
-    return avg
+    
 
 def get_price_max(token):
     token = token.split('-')[0]
