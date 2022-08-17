@@ -80,4 +80,5 @@ def get_price_main():
     }
     mycol.insert_one(avg)
 
-def get_price_coinbase(token)
+def get_price_coinbase(token):
+    
