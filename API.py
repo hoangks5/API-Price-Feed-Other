@@ -385,7 +385,7 @@ def choice_min(docs):
     for val in docs:
         if val != None :
             req.append(val['price'])
-    return min(req)
+    return min(req) - min(req)*0.1
         
 
 def price_main(token):
