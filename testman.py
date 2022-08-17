@@ -81,7 +81,7 @@ def get_price_chainlink(token):
     response = requests.get(url)
 
     avg = {
-        'source': 'CHAINLINK',
+        'source': 'Chainlink',
         'token': token.split('-')[0],
         'timestamp': time_start,
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
