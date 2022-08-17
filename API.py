@@ -452,10 +452,6 @@ def price_min(token):
             docs.append(get_coingecko_price(token))
     def t7(token):
             docs.append(get_gateio_price(token))
-    def t8(token):
-        price_coinbase.append(get_coinbase_price(token)['price'])
-    def t9(token):
-        price_chainlink.append(get_chainlink_price(token)['price'])
     th.append(threading.Thread(target=t1,args={token,}))
     th.append(threading.Thread(target=t2,args={token,}))
     th.append(threading.Thread(target=t3,args={token,}))
@@ -463,8 +459,6 @@ def price_min(token):
     th.append(threading.Thread(target=t5,args={token,}))
     th.append(threading.Thread(target=t6,args={token,}))
     th.append(threading.Thread(target=t7,args={token,}))
-    th.append(threading.Thread(target=t8,args={token,}))
-    th.append(threading.Thread(target=t9,args={token,}))
     for ths in th:
         ths.start()
     for ths in th:
