@@ -20,7 +20,7 @@ async def price2(token): # do dùng ASGI nên ở đây thêm async, nếu bên 
 @app.get("/noise/{token}")
 async def noise(token):
     token = (token + '-usd').upper()
-    return 
+    return token
 
 
 
