@@ -108,16 +108,15 @@ def get_price_chainlink(token):
     }
     mycol.insert_one(avg)
 
-
-th = []
-for token in TOKENS:
-    th.append(threading.Thread(target=get_price_min,args={token,}))
-    th.append(threading.Thread(target=get_price_max,args={token,}))
-    th.append(threading.Thread(target=get_price_noise,args={token,}))
-    th.append(threading.Thread(target=get_price_coinbase,args={token,}))
-    th.append(threading.Thread(target=get_price_chainlink,args={token,}))
-
-
-for ths in th:
-    ths.start()
+def get_price(times,delay):
+    for i in range(times):
+        th = []
+        for token in TOKENS:
+            th.append(threading.Thread(target=get_price_min,args={token,}))
+            th.append(threading.Thread(target=get_price_max,args={token,}))
+            th.append(threading.Thread(target=get_price_noise,args={token,}))
+            th.append(threading.Thread(target=get_price_coinbase,args={token,}))
+            th.append(threading.Thread(target=get_price_chainlink,args={token,}))
+        for ths in th:
+            ths.start()
 
