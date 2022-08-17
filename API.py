@@ -436,8 +436,6 @@ def price_min(token):
     docs = []
     token = token.upper()+'-USD'
     th = []
-    price_coinbase = []
-    price_chainlink = []
     def t1(token):
             docs.append(get_binance_price(token))
     def t2(token):
