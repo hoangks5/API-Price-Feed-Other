@@ -87,9 +87,12 @@ def get_price_chainlink(token):
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
     return avg
+global data = []
+def t1():
+    
+
 
 def show(token):
-    data = []
     th = []
         th.append(threading.Thread(target=get_price_min,args={token,}))
         th.append(threading.Thread(target=get_price_max,args={token,}))
