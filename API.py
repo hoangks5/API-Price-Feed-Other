@@ -109,15 +109,8 @@ def get_kucoin_price(symbol):
     
     time_start = time.time()
     response = requests.get('https://api.kucoin.com/api/v1/market/stats?symbol='+symbol+'T')
-    avg = {
-        'token': symbol.split('-')[0],
-        'source': 'KUCOIN',
-        'timestamp': response.json()['data']['time']/1000,
-        'price': float(response.json()['data']['last']),
-        'volume24h': float(response.json()['data']['volValue']),
-        'delay': time_start - response.json()['data']['time']/1000
-    }
-    return avg
+    return float(response.json()['data']['last'])
+
     
     
     
