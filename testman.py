@@ -88,8 +88,6 @@ def get_price_chainlink(token):
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
     return avg
-
-data = []
 def t1(token):
     data.append(get_price_min(token))
 def t2(token):
