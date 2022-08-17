@@ -30,7 +30,7 @@ def get_price_min(token):
     }
 def get_price_max(token):
     token = token.split('-')[0]
-    url = "https://pricefeedfastapi.herokuapp.com/min/"+token
+    url = "https://pricefeedfastapi.herokuapp.com/max/"+token
     response = requests.get(url).json()['price']
     timest = time.time()
     avg = {
