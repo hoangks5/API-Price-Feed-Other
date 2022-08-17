@@ -86,7 +86,6 @@ def get_price_coinbase(token):
     response = requests.get(url, headers=headers)
     time_start = time.time()
     response = requests.request("GET", url, headers=headers)
-    time_stop = time.time()
     avg = {
         'source': 'Coinbase',
         'token': token.split('-')[0],
@@ -104,7 +103,7 @@ def get_price_chainlink(token):
     avg = {
         'source': 'CHAINLINK',
         'token': token.split('-')[0],
-        'timestamp': timest,
+        'timestamp': time_start,
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
     #mycol.insert_one(avg)
