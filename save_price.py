@@ -24,6 +24,7 @@ def get_price_min(token):
     response = requests.get(url).json()['price']
     timest = time.time()
     avg = {
+        'source' : 'Min',
         'token' : token,
         'timestamp' : timest,
         'price' : response,
@@ -38,4 +39,3 @@ def get_price_max(token):
         'timestamp' : timest,
         'price' : response,
     }
-    
