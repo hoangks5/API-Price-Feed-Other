@@ -89,9 +89,12 @@ def get_price_chainlink(token):
     return avg
 global data
 data = []
-def t1():
-    data.append(get_price_min)
-
+def t1(token):
+    data.append(get_price_min(token))
+def t2(token):
+    data.append(get_price_max(token))
+def t3(token):
+    data.append(get_price_noise(token))
 
 def show(token):
     th = []
