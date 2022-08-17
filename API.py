@@ -462,8 +462,7 @@ def price_min(token):
     for ths in th:
         ths.join()
     data = {
-        'price_median' : cal_median(docs),
-        'price_volume_weighted_average' : cal_volume_weighted_average(docs),
+        'price' : 
     }
     return data
 
