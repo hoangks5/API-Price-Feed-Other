@@ -92,12 +92,5 @@ def get_price_chainlink(token):
 
 
 
-def rint1(token):
-    print(get_price_min(token))
-    print(get_price_max(token))
-    print(get_price_noise(token))
-    print(get_price_coinbase(token))
-    print(get_price_chainlink(token))
-    print(get_price_main(token))
 print('????')
 print(get_price_min('DOGE-USD'))
