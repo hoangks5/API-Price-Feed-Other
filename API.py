@@ -39,8 +39,18 @@ TOKENS = ['BTC-USD', 'ETH-USD', 'BNB-USD', 'DOGE-USD', 'LINK-USD', 'UNI-USD', 'S
 def get_binance_price(symbol): 
     symbol = symbol.split("-")[0]
     url = "https://api.binance.com/api/v3/ticker/24hr?symbol="+symbol+"USDT"
+    time_start = time.time()
     response = requests.get(url)
-    return float(response.json()['lastPrice'])
+    time_stop = time.time()
+    avg = {
+        'token': symbol,
+        'source': 'BINACE',
+        'timestamp': time_start,
+        'price': float(response.json()['lastPrice']),
+        'volume24h': float(response.json()['quoteVolume']),
+        'delay': time_stop - time_start
+    }
+    return avg
      
     
 
@@ -62,9 +72,19 @@ def get_coinbase_price(symbol):
     url = "https://api.exchange.coinbase.com/products/"+symbol+"T/stats"
     headers = {"Accept": "application/json"}
     response = requests.get(url, headers=headers)
+    time_start = time.time()
     response = requests.request("GET", url, headers=headers)
+    time_stop = time.time()
     try:
-        return float(response.json()['last']),
+        avg = {
+            'token': symbol.split('-')[0],
+            'source': 'COINBASE',
+            'timestamp': time_start,
+            'price': float(response.json()['last']),
+            'volume24h': float(response.json()['volume']),
+            'delay': time_stop-time_start
+        }
+        return avg
     except:
         pass
     
@@ -86,9 +106,19 @@ def get_coinbase_price(symbol):
 def get_gateio_price(symbol):
     pair = symbol.replace("-","_")
     url = "https://data.gateapi.io/api2/1/ticker/"+pair+'t'
+    time_start = time.time()
     response = requests.get(url)
+    time_stop = time.time()
     try:
-        return float(response.json()['last']),
+        avg = {
+            'token': symbol.split('-')[0],
+            'source': 'GATEIO',
+            'timestamp': time_start,
+            'price': float(response.json()['last']),
+            'volume24h': float(response.json()['baseVolume']),
+            'delay': time_stop - time_start
+        }
+        return avg
     except:
         pass
     
@@ -109,8 +139,15 @@ def get_kucoin_price(symbol):
     
     time_start = time.time()
     response = requests.get('https://api.kucoin.com/api/v1/market/stats?symbol='+symbol+'T')
-    return float(response.json()['data']['last'])
-
+    avg = {
+        'token': symbol.split('-')[0],
+        'source': 'KUCOIN',
+        'timestamp': response.json()['data']['time']/1000,
+        'price': float(response.json()['data']['last']),
+        'volume24h': float(response.json()['data']['volValue']),
+        'delay': time_start - response.json()['data']['time']/1000
+    }
+    return avg
     
     
     
@@ -135,9 +172,20 @@ def get_coinmarketcap_price(symbol):
         'symbol' : symbol.split('-')[0]
     }
     header = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY' : '3fe6464e-8a86-4ad7-8c95-d7beaef15bad'}
+    time_start = time.time()
     response = requests.get(url=url,params=parameters,headers=header)
-    return response.json()['data'][symbol.split('-')[0]]['quote']['USD']['price'],
-
+    avg = {
+        'token': symbol.split('-')[0],
+        'source': 'COINMARKERTCAP',
+        'timestamp': datetime.strptime(response.json()['data'][symbol.split('-')[0]]['last_updated'],
+        '%Y-%m-%dT%H:%M:%S.%f%z').timestamp(),
+        'price': response.json()['data'][symbol.split('-')[0]]['quote']['USD']['price'],
+        'volume24h': response.json()['data'][symbol.split('-')[0]]['quote']['USD']['volume_24h'],
+        'delay': time_start - datetime.strptime(response.json()['data'][symbol.split('-')[0]]['last_updated'],
+        '%Y-%m-%dT%H:%M:%S.%f%z').timestamp()
+    }
+    
+    return avg
     
 
 # COINGECKO
@@ -172,9 +220,18 @@ def get_coingecko_price(symbol):
     token = symbol.split('-')[0]
     symbol = TOKEN_IDS_COINGECKO[symbol.split("-")[0]]
     url = "https://api.coingecko.com/api/v3/simple/price?ids="+symbol+"&vs_currencies=usd&include_24hr_vol=true&include_last_updated_at=true"
+    time_start = time.time()
     response = requests.get(url)
-    return response.json()[symbol]['usd']
 
+    avg = {
+        'token': token,
+        'source': 'COINGECKO',
+        'timestamp': response.json()[symbol]['last_updated_at'],
+        'price': response.json()[symbol]['usd'],
+        'volume24h': response.json()[symbol]['usd_24h_vol'],
+        'delay': time_start - response.json()[symbol]['last_updated_at']
+    }
+    return avg
     
 # CHAINLINK
 
@@ -193,8 +250,18 @@ def get_coingecko_price(symbol):
 def get_chainlink_price(symbol):
     
     url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+symbol.split('-')[0]+'&tsyms='+symbol.split('-')[1]+'t'
+    time_start = time.time()
     response = requests.get(url)
-    return response.json()['RAW'][symbol.split('-')[0]]['USDT']['PRICE']
+
+    avg = {
+        'token': symbol.split('-')[0],
+        'source': 'CHAINLINK',
+        'timestamp': response.json()['RAW'][symbol.split('-')[0]]['USDT']['LASTUPDATE'],
+        'price': response.json()['RAW'][symbol.split('-')[0]]['USDT']['PRICE'],
+        'volume24h': response.json()['RAW'][symbol.split('-')[0]]['USDT']['VOLUME24HOURTO'],
+        'delay': time_start - response.json()['RAW'][symbol.split('-')[0]]['USDT']['LASTUPDATE']
+    }
+    return avg
    
 
 def cal_median(docs):
@@ -394,8 +461,9 @@ def price_min(token):
         ths.start()
     for ths in th:
         ths.join()
+
     data = {
-        'price' : min(docs)
+        'price' : choice_min(token)
     }
     return data
 
