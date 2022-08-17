@@ -96,7 +96,7 @@ def get_price_coinbase(token):
 
 
 def get_price_chainlink(token):
-    url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+token.split('-')[0]+'&tsyms='+symbol.split('-')[1]+'t'
+    url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+token.split('-')[0]+'&tsyms='+token.split('-')[1]+'t'
     time_start = time.time()
     response = requests.get(url)
 
