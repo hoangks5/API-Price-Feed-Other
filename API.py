@@ -468,7 +468,7 @@ def price_min(token):
     return data
 
 
-def price_min(token):
+def price_max(token):
     docs = []
     token = token.upper()+'-USD'
     th = []
