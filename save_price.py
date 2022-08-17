@@ -41,6 +41,7 @@ def get_price_max(token):
         'timestamp' : timest,
         'price' : response,
     }
+    mycol.insert_one(avg)
 
 
 def get_price_noise(token):
@@ -54,6 +55,7 @@ def get_price_noise(token):
         'timestamp' : timest,
         'price' : response,
     }
+    mycol.insert_one(avg)
 
 
 def get_price_main():
