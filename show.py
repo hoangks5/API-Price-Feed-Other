@@ -95,6 +95,8 @@ def t2(token):
     data.append(get_price_max(token))
 def t3(token):
     data.append(get_price_noise(token))
+def t4(token):
+    
 
 def show(token):
     th = []
