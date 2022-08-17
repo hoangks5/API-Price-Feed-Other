@@ -62,19 +62,10 @@ def get_coinbase_price(symbol):
     url = "https://api.exchange.coinbase.com/products/"+symbol+"T/stats"
     headers = {"Accept": "application/json"}
     response = requests.get(url, headers=headers)
-    time_start = time.time()
     response = requests.request("GET", url, headers=headers)
-    time_stop = time.time()
+   
     try:
-        avg = {
-            'token': symbol.split('-')[0],
-            'source': 'COINBASE',
-            'timestamp': time_start,
-            'price': float(response.json()['last']),
-            'volume24h': float(response.json()['volume']),
-            'delay': time_stop-time_start
-        }
-        return avg
+        return float(response.json()['last']),
     except:
         pass
     
