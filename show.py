@@ -111,9 +111,11 @@ def show(token):
     th.append(threading.Thread(target=t4,args={token,}))
     th.append(threading.Thread(target=t5,args={token,}))
     th.append(threading.Thread(target=t6,args={token,}))
-
     for ths in th:
         ths.start()
-    time.sleep(delay)
+    for ths in th:
+        ths.join()
+   
+   
     plt.bar('hi',10)
     plt.show()
