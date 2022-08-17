@@ -51,7 +51,7 @@ def get_price_main():
     price_vwa = response['price_volume_weighted_average']
     timest = time.time()
     avg = {
-        'source' : 'Median',
+        'source' : 'Main',
         'token' : token,
         'timestamp' : timest,
         'price_median' : price_median,
@@ -101,7 +101,7 @@ def t5(token):
     data.append(get_price_chainlink(token))
 def t6(token):
     res = get_price_main(token)
-    
+
 
 def show(token):
     th = []
