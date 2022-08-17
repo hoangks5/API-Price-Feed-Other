@@ -115,7 +115,9 @@ def show(token):
         ths.start()
     for ths in th:
         ths.join()
-    print(data)
+    for i in data:
+        if i['source'] == 'Min':
+            print(i['price'])
 
 
 show('DOGE-USD')
