@@ -116,3 +116,5 @@ def show(token):
     for ths in th:
         ths.join()
     print(data)
+
+show('DOGE-USD')
