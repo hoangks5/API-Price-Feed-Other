@@ -105,11 +105,13 @@ def t6(token):
 
 def show(token):
     th = []
-        th.append(threading.Thread(target=get_price_min,args={token,}))
-        th.append(threading.Thread(target=get_price_max,args={token,}))
-        th.append(threading.Thread(target=get_price_noise,args={token,}))
-        th.append(threading.Thread(target=get_price_coinbase,args={token,}))
-        th.append(threading.Thread(target=get_price_chainlink,args={token,}))
+        th.append(threading.Thread(target=t1,args={token,}))
+        th.append(threading.Thread(target=t2,args={token,}))
+        th.append(threading.Thread(target=t3,args={token,}))
+        th.append(threading.Thread(target=t4,args={token,}))
+        th.append(threading.Thread(target=t5,args={token,}))
+        th.append(threading.Thread(target=t6,args={token,}))
+
     for ths in th:
         ths.start()
     time.sleep(delay)
