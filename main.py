@@ -16,7 +16,9 @@ async def price2(token): # do dùng ASGI nên ở đây thêm async, nếu bên 
     return API.price_max(token)
 
 
-
+@app.get("/noise/{token}")
+async def noise(token):
+    return False
 
 
 
