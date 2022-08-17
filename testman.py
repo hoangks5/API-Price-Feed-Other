@@ -4,7 +4,7 @@ import time
 import requests
 import  threading
 print('????')
-print(get_price_min('DOGE-USD'))
+#print(get_price_min('DOGE-USD'))
 def get_price_min(token):
     token = token.split('-')[0]
     url = "https://pricefeedfastapi.herokuapp.com/min/"+token
