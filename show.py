@@ -90,7 +90,7 @@ def get_price_chainlink(token):
 global data
 data = []
 def t1():
-    
+    data.append(get_price_min)
 
 
 def show(token):
