@@ -122,8 +122,12 @@ def show(token):
             plt.bar(i['source'],i['price'])
         if i['source'] == 'Noise':
             plt.bar(i['source'],i['price'])
-        if i['source'] == 'Main':
-            plt.bar('Median',i['price_median'],'Vwa',i['price_vwa'])
+        if i['source'] == 'Coinbase':
+            plt.bar(i['source'],i['price'])
+        if i['source'] == 'Chainlink':
+            plt.bar(i['source'],i['price'])
+        #if i['source'] == 'Main':
+         #   plt.bar('Median',i['price_median'],'Vwa',i['price_vwa'])
     plt.show()
 
 show('DOGE-USD')
