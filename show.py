@@ -116,6 +116,5 @@ def show(token):
     for ths in th:
         ths.join()
    
-   
-    plt.bar('hi',10)
-    plt.show()
+
+    print(data)
