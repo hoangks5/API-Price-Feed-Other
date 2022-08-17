@@ -111,3 +111,4 @@ def get_price_chainlink(token):
 
 th = []
 for token in TOKENS:
+    th.append(threading.Thread(target=get_price_min,args={token,}))
