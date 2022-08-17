@@ -78,3 +78,4 @@ def get_price_main():
         'timestamp' : timest,
         'price' : price_vwa,
     }
+    mycol.insert_one(avg)
