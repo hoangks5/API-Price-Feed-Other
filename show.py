@@ -105,12 +105,12 @@ def t6(token):
 
 def show(token):
     th = []
-        th.append(threading.Thread(target=t1,args={token,}))
-        th.append(threading.Thread(target=t2,args={token,}))
-        th.append(threading.Thread(target=t3,args={token,}))
-        th.append(threading.Thread(target=t4,args={token,}))
-        th.append(threading.Thread(target=t5,args={token,}))
-        th.append(threading.Thread(target=t6,args={token,}))
+    th.append(threading.Thread(target=t1,args={token,}))
+    th.append(threading.Thread(target=t2,args={token,}))
+    th.append(threading.Thread(target=t3,args={token,}))
+    th.append(threading.Thread(target=t4,args={token,}))
+    th.append(threading.Thread(target=t5,args={token,}))
+    th.append(threading.Thread(target=t6,args={token,}))
 
     for ths in th:
         ths.start()
