@@ -135,20 +135,9 @@ def get_coinmarketcap_price(symbol):
         'symbol' : symbol.split('-')[0]
     }
     header = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY' : '3fe6464e-8a86-4ad7-8c95-d7beaef15bad'}
-    time_start = time.time()
     response = requests.get(url=url,params=parameters,headers=header)
-    avg = {
-        'token': symbol.split('-')[0],
-        'source': 'COINMARKERTCAP',
-        'timestamp': datetime.strptime(response.json()['data'][symbol.split('-')[0]]['last_updated'],
-        '%Y-%m-%dT%H:%M:%S.%f%z').timestamp(),
-        'price': response.json()['data'][symbol.split('-')[0]]['quote']['USD']['price'],
-        'volume24h': response.json()['data'][symbol.split('-')[0]]['quote']['USD']['volume_24h'],
-        'delay': time_start - datetime.strptime(response.json()['data'][symbol.split('-')[0]]['last_updated'],
-        '%Y-%m-%dT%H:%M:%S.%f%z').timestamp()
-    }
-    
-    return avg
+    return response.json()['data'][symbol.split('-')[0]]['quote']['USD']['price'],
+
     
 
 # COINGECKO
