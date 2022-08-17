@@ -172,18 +172,9 @@ def get_coingecko_price(symbol):
     token = symbol.split('-')[0]
     symbol = TOKEN_IDS_COINGECKO[symbol.split("-")[0]]
     url = "https://api.coingecko.com/api/v3/simple/price?ids="+symbol+"&vs_currencies=usd&include_24hr_vol=true&include_last_updated_at=true"
-    time_start = time.time()
     response = requests.get(url)
+    return response.json()[symbol]['usd']
 
-    avg = {
-        'token': token,
-        'source': 'COINGECKO',
-        'timestamp': response.json()[symbol]['last_updated_at'],
-        'price': response.json()[symbol]['usd'],
-        'volume24h': response.json()[symbol]['usd_24h_vol'],
-        'delay': time_start - response.json()[symbol]['last_updated_at']
-    }
-    return avg
     
 # CHAINLINK
 
