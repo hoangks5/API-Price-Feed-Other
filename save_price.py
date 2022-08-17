@@ -72,3 +72,9 @@ def get_price_main():
         'price' : price_median,
     }
     mycol.insert_one(avg)
+    avg = {
+        'source' : 'Vwa',
+        'token' : token,
+        'timestamp' : timest,
+        'price' : price_vwa,
+    }
