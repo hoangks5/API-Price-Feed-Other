@@ -122,6 +122,12 @@ def show(token):
         if i['source'] == 'Max':
             print(i['price'])
             plt.bar(i['source'],i['price'])
+        if i['source'] == 'Noise':
+            print(i['price'])
+            plt.bar(i['source'],i['price'])
+        if i['source'] == 'Main':
+            print(i['price'])
+            plt.bar('Median',i['price_median'],'Vwa',i['price_vwa'])
     plt.show()
 
 show('DOGE-USD')
