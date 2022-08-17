@@ -110,3 +110,4 @@ def get_price_chainlink(token):
 
 
 th = []
+for token in TOKENS:
