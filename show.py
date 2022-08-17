@@ -58,6 +58,34 @@ def get_price_main():
 
     }
     return avg
+
+def get_price_coinbase(token):
+    url = "https://api.exchange.coinbase.com/products/"+token+"T/stats"
+    headers = {"Accept": "application/json"}
+    response = requests.get(url, headers=headers)
+    time_start = time.time()
+    response = requests.request("GET", url, headers=headers)
+    avg = {
+        'source': 'Coinbase',
+        'token': token.split('-')[0],
+        'timestamp': time_start,
+        'price': float(response.json()['last']),
+    }
+    mycol.insert_one(avg)
+
+
+def get_price_chainlink(token):
+    url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+token.split('-')[0]+'&tsyms='+token.split('-')[1]+'t'
+    time_start = time.time()
+    response = requests.get(url)
+
+    avg = {
+        'source': 'CHAINLINK',
+        'token': token.split('-')[0],
+        'timestamp': time_start,
+        'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
+    }
+    mycol.insert_one(avg)
 data = []
 plt.bar('hi',10)
 plt.show()
