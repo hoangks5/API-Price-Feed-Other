@@ -26,5 +26,5 @@ def get_price_min(token):
     avg = {
         'token' : token,
         'timestamp' : timest,
-        'price' : response
+        'price' : response,
     }
