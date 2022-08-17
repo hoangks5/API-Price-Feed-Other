@@ -454,7 +454,7 @@ def price_min(token):
     th.append(threading.Thread(target=t2,args={token,}))
     th.append(threading.Thread(target=t3,args={token,}))
     th.append(threading.Thread(target=t4,args={token,}))
-    th.append(threading.Thread(target=t5,args={token,}))
+    #th.append(threading.Thread(target=t5,args={token,}))
     th.append(threading.Thread(target=t6,args={token,}))
     th.append(threading.Thread(target=t7,args={token,}))
     for ths in th:
