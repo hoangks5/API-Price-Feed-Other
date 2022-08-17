@@ -122,6 +122,6 @@ def show(token):
         if i['source'] == 'Max':
             print(i['price'])
             plt.bar(i['source'],i['price'])
-        plt.show()
+    plt.show()
 
 show('DOGE-USD')
