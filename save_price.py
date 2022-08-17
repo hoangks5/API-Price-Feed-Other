@@ -40,3 +40,16 @@ def get_price_max(token):
         'timestamp' : timest,
         'price' : response,
     }
+
+
+def get_price_noise(token):
+    token = token.split('-')[0]
+    url = "https://pricefeedfastapi.herokuapp.com/noise/"+token
+    response = requests.get(url).json()['price']
+    timest = time.time()
+    avg = {
+        'source' : 'Noise',
+        'token' : token,
+        'timestamp' : timest,
+        'price' : response,
+    }
