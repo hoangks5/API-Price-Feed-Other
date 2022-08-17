@@ -63,7 +63,6 @@ def get_coinbase_price(symbol):
     headers = {"Accept": "application/json"}
     response = requests.get(url, headers=headers)
     response = requests.request("GET", url, headers=headers)
-   
     try:
         return float(response.json()['last']),
     except:
