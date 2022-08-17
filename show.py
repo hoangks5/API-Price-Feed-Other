@@ -100,6 +100,7 @@ def t4(token):
 def t5(token):
     data.append(get_price_chainlink(token))
 
+
 def show(token):
     th = []
         th.append(threading.Thread(target=get_price_min,args={token,}))
