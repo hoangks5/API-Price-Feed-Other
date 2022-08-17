@@ -63,7 +63,7 @@ def get_price_main():
     price_vwa = response['price_volume_weighted_average']
     timest = time.time()
     avg = {
-        'source' : 'Noise',
+        'source' : 'Median',
         'token' : token,
         'timestamp' : timest,
         'price' : price_median,
