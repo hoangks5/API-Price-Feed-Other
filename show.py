@@ -118,13 +118,11 @@ def show(token):
     print(data)
 
 def rint1(token):
-    data.append(get_price_min(token))
-def t2(token):
-    data.append(get_price_max(token))
-def t3(token):
-    data.append(get_price_noise(token))
-def t4(token):
-    data.append(get_price_coinbase(token))
-def t5(token):
+    print(get_price_min(token))
+    print(get_price_max(token))
+    print(get_price_noise(token))
+    print(get_price_coinbase(token))
     print(get_price_chainlink(token))
     print(get_price_main(token))
+
+rint1('DOGE-USD')
