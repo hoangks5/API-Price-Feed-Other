@@ -118,7 +118,7 @@ def show(token):
     print(data)
     for i in data:
         if i['source'] == 'Min':
-            plt.bar(i['source'],i['price'])
+            plt.bar(i['source'],i['price'],color='red')
         if i['source'] == 'Max':
             plt.bar(i['source'],i['price'])
         if i['source'] == 'Noise':
