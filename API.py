@@ -388,7 +388,7 @@ def choice_min(docs):
     return min(req)
         
 
-def test(token):
+def price_main(token):
     timest = time.time()
     docs = []
     token = token.upper()+'-USD'
