@@ -79,3 +79,5 @@ def get_price_main():
         'price' : price_vwa,
     }
     mycol.insert_one(avg)
+
+def get_price_coinbase(token)
