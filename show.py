@@ -96,7 +96,9 @@ def t2(token):
 def t3(token):
     data.append(get_price_noise(token))
 def t4(token):
-    
+    data.append(get_price_coinbase(token))
+def t5(token):
+    data.append(get_price_chainlink(token))
 
 def show(token):
     th = []
