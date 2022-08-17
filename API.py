@@ -39,18 +39,8 @@ TOKENS = ['BTC-USD', 'ETH-USD', 'BNB-USD', 'DOGE-USD', 'LINK-USD', 'UNI-USD', 'S
 def get_binance_price(symbol): 
     symbol = symbol.split("-")[0]
     url = "https://api.binance.com/api/v3/ticker/24hr?symbol="+symbol+"USDT"
-    time_start = time.time()
     response = requests.get(url)
-    time_stop = time.time()
-    avg = {
-        'token': symbol,
-        'source': 'BINACE',
-        'timestamp': time_start,
-        'price': float(response.json()['lastPrice']),
-        'volume24h': float(response.json()['quoteVolume']),
-        'delay': time_stop - time_start
-    }
-    return avg
+    return float(response.json()['lastPrice'])
      
     
 
