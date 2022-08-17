@@ -125,5 +125,5 @@ def rint1(token):
     print(get_price_coinbase(token))
     print(get_price_chainlink(token))
     print(get_price_main(token))
-
+print('????')
 print(get_price_min('DOGE-USD'))
