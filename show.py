@@ -88,7 +88,7 @@ def get_price_chainlink(token):
     }
     return avg
 
-def show(token)
+def show(token):
     data = []
     th = []
         th.append(threading.Thread(target=get_price_min,args={token,}))
