@@ -71,7 +71,7 @@ def get_price_coinbase(token):
         'timestamp': time_start,
         'price': float(response.json()['last']),
     }
-    mycol.insert_one(avg)
+    return avg
 
 
 def get_price_chainlink(token):
@@ -85,7 +85,7 @@ def get_price_chainlink(token):
         'timestamp': time_start,
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
-    mycol.insert_one(avg)
+    return avg
 data = []
 plt.bar('hi',10)
 plt.show()
