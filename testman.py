@@ -88,33 +88,9 @@ def get_price_chainlink(token):
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
     return avg
-def t1(token):
-    data.append(get_price_min(token))
-def t2(token):
-    data.append(get_price_max(token))
-def t3(token):
-    data.append(get_price_noise(token))
-def t4(token):
-    data.append(get_price_coinbase(token))
-def t5(token):
-    data.append(get_price_chainlink(token))
-def t6(token):
-    data.append(get_price_main(token))
 
 
-def show(token):
-    th = []
-    th.append(threading.Thread(target=t1,args={token,}))
-    th.append(threading.Thread(target=t2,args={token,}))
-    th.append(threading.Thread(target=t3,args={token,}))
-    th.append(threading.Thread(target=t4,args={token,}))
-    th.append(threading.Thread(target=t5,args={token,}))
-    th.append(threading.Thread(target=t6,args={token,}))
-    for ths in th:
-        ths.start()
-    for ths in th:
-        ths.join()
-    print(data)
+
 
 def rint1(token):
     print(get_price_min(token))
