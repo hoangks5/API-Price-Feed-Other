@@ -463,7 +463,7 @@ def price_min(token):
         ths.join()
 
     data = {
-        'price' : choice_min(token)
+        'price' : choice_min(docs)
     }
     return data
 
