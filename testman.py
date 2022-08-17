@@ -118,6 +118,7 @@ def show(token):
     for i in data:
         if i['source'] == 'Min':
             print(i['price'])
-
+            plt.bar(i['price'],i['source'])
+            plt.show()
 
 show('DOGE-USD')
