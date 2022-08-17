@@ -193,18 +193,8 @@ def get_coingecko_price(symbol):
 def get_chainlink_price(symbol):
     
     url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+symbol.split('-')[0]+'&tsyms='+symbol.split('-')[1]+'t'
-    time_start = time.time()
     response = requests.get(url)
-
-    avg = {
-        'token': symbol.split('-')[0],
-        'source': 'CHAINLINK',
-        'timestamp': response.json()['RAW'][symbol.split('-')[0]]['USDT']['LASTUPDATE'],
-        'price': response.json()['RAW'][symbol.split('-')[0]]['USDT']['PRICE'],
-        'volume24h': response.json()['RAW'][symbol.split('-')[0]]['USDT']['VOLUME24HOURTO'],
-        'delay': time_start - response.json()['RAW'][symbol.split('-')[0]]['USDT']['LASTUPDATE']
-    }
-    return avg
+    return response.json()['RAW'][symbol.split('-')[0]]['USDT']['PRICE']
    
 
 def cal_median(docs):
