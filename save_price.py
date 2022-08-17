@@ -94,3 +94,7 @@ def get_price_coinbase(token):
         'price': float(response.json()['last']),
     }
     mycol.insert_one(avg)
+
+
+def get_price_chainlink(token):
+    
