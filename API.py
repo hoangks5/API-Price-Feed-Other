@@ -389,7 +389,6 @@ def choice_min(docs):
         
 
 def price_main(token):
-    timest = time.time()
     docs = []
     token = token.upper()+'-USD'
     th = []
@@ -427,12 +426,13 @@ def price_main(token):
     for ths in th:
         ths.join()
     data = {
-        'token' : token,
-        'timestamp' : timest,
         'price_median' : cal_median(docs),
         'price_volume_weighted_average' : cal_volume_weighted_average(docs),
     }
     return data
+
+
+
 
  
 
