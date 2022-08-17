@@ -117,4 +117,15 @@ def show(token):
         ths.join()
     print(data)
 
-show('DOGE-USD')
+def t1(token):
+    data.append(get_price_min(token))
+def t2(token):
+    data.append(get_price_max(token))
+def t3(token):
+    data.append(get_price_noise(token))
+def t4(token):
+    data.append(get_price_coinbase(token))
+def t5(token):
+    data.append(get_price_chainlink(token))
+def t6(token):
+    print(get_price_main(token))
