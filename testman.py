@@ -131,4 +131,4 @@ def show(token):
          #   plt.bar('Median',i['price_median'],'Vwa',i['price_vwa'])
     plt.show()
 
-show('DOGE-USD')
+show('ETH-USD')
