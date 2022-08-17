@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import save_price
 import time
+import requests
 
 def get_price_min(token):
     token = token.split('-')[0]
