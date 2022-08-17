@@ -53,3 +53,7 @@ def get_price_noise(token):
         'timestamp' : timest,
         'price' : response,
     }
+
+
+def get_price_main():
+    
