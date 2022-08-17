@@ -86,6 +86,8 @@ def get_price_chainlink(token):
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
     return avg
+
+    
 data = []
 plt.bar('hi',10)
 plt.show()
