@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import save_price
 import time
 import requests
+import  threading
 
 def get_price_min(token):
     token = token.split('-')[0]
@@ -87,7 +88,16 @@ def get_price_chainlink(token):
     }
     return avg
 
-    
-data = []
-plt.bar('hi',10)
-plt.show()
+def show(token)
+    data = []
+    th = []
+        th.append(threading.Thread(target=get_price_min,args={token,}))
+        th.append(threading.Thread(target=get_price_max,args={token,}))
+        th.append(threading.Thread(target=get_price_noise,args={token,}))
+        th.append(threading.Thread(target=get_price_coinbase,args={token,}))
+        th.append(threading.Thread(target=get_price_chainlink,args={token,}))
+    for ths in th:
+        ths.start()
+    time.sleep(delay)
+    plt.bar('hi',10)
+    plt.show()
