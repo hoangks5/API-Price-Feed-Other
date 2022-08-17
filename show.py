@@ -55,7 +55,7 @@ def get_price_main():
         'timestamp' : timest,
         'price' : price_median,
     }
-   
+    
     avg = {
         'source' : 'Vwa',
         'token' : token,
