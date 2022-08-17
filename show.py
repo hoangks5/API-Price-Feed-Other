@@ -43,7 +43,7 @@ def get_price_noise(token):
     }
     return avg
 
-def get_price_main():
+def get_price_main(token):
     token = token.split('-')[0]
     url = "https://pricefeedfastapi.herokuapp.com/"+token
     response = requests.get(url).json()
