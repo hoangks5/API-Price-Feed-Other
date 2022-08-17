@@ -29,6 +29,7 @@ def get_price_min(token):
         'timestamp' : timest,
         'price' : response,
     }
+    mycol.insert_one(avg)
 def get_price_max(token):
     token = token.split('-')[0]
     url = "https://pricefeedfastapi.herokuapp.com/max/"+token
