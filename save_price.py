@@ -119,4 +119,6 @@ def get_price(times,delay):
             th.append(threading.Thread(target=get_price_chainlink,args={token,}))
         for ths in th:
             ths.start()
+        time.sleep(delay)
 
+get_price(5,120)
