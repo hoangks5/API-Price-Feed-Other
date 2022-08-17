@@ -1,5 +1,6 @@
 from fastapi import FastAPI #import class FastAPI() từ thư viện fastapi
 import requests
+import numpy as np
 import API
 app = FastAPI() # gọi constructor và gán vào biến app
 @app.get("/{token}") # giống flask, khai báo phương thức get và url
@@ -18,7 +19,7 @@ async def price2(token): # do dùng ASGI nên ở đây thêm async, nếu bên 
 
 @app.get("/noise/{token}")
 async def noise(token):
-    return False
+    return 
 
 
 
