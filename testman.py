@@ -117,11 +117,5 @@ def show(token):
         ths.join()
     print(data)
 
-def rint1(token):
-    print(get_price_min(token))
-    print(get_price_max(token))
-    print(get_price_noise(token))
-    print(get_price_coinbase(token))
-    print(get_price_chainlink(token))
-    print(get_price_main(token))
-rint1('DOGE-USD')
+
+show('DOGE-USD')
