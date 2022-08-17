@@ -117,7 +117,7 @@ def show(token):
         ths.join()
     print(data)
 
-def t1(token):
+def rint1(token):
     data.append(get_price_min(token))
 def t2(token):
     data.append(get_price_max(token))
@@ -126,6 +126,5 @@ def t3(token):
 def t4(token):
     data.append(get_price_coinbase(token))
 def t5(token):
-    data.append(get_price_chainlink(token))
-def t6(token):
+    print(get_price_chainlink(token))
     print(get_price_main(token))
