@@ -432,7 +432,7 @@ def price_main(token):
     return data
 
 
-def price_main(token):
+def price_min(token):
     docs = []
     token = token.upper()+'-USD'
     th = []
