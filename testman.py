@@ -118,18 +118,18 @@ def show(token):
     print(data)
     for i in data:
         if i['source'] == 'Min':
-            plt.bar(i['source'],i['price'],color='red')
+            plt.bar(i['source'],i['price'],color='green')
         if i['source'] == 'Max':
-            plt.bar(i['source'],i['price'])
+            plt.bar(i['source'],i['price'],color='green')
         if i['source'] == 'Noise':
-            plt.bar(i['source'],i['price'])
+            plt.bar(i['source'],i['price'],color='green')
         if i['source'] == 'Coinbase':
-            plt.bar(i['source'],i['price'])
+            plt.bar(i['source'],i['price'],color='green')
         if i['source'] == 'Chainlink':
-            plt.bar(i['source'],i['price'])
+            plt.bar(i['source'],i['price'],color='green')
         if i['source'] == 'Main':
-            plt.bar('Median',i['price_median'])
-            plt.bar('Vwa',i['price_vwa'])
+            plt.bar('Median',i['price_median'],color='green')
+            plt.bar('Vwa',i['price_vwa'],color='green')
     plt.show()
 
 show('ETH-USD')
