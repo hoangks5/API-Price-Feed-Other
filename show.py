@@ -40,7 +40,7 @@ def get_price_noise(token):
         'timestamp' : timest,
         'price' : response,
     }
-    myco
+    return avg
 data = []
 plt.bar('hi',10)
 plt.show()
