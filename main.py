@@ -1,6 +1,7 @@
 from fastapi import FastAPI #import class FastAPI() từ thư viện fastapi
 import requests
 import numpy as np
+import random
 import API
 app = FastAPI() # gọi constructor và gán vào biến app
 @app.get("/{token}") # giống flask, khai báo phương thức get và url
@@ -20,4 +21,5 @@ async def price2(token): # do dùng ASGI nên ở đây thêm async, nếu bên 
 @app.get("/noise/{token}")
 async def noise(token):
     token = (token + '-usd').upper()
-    return API.get_binance_price(token)['price']
+    price = API.get_binance_price(token)['price'] 
+    return price + price*random.randint(0,100)
