@@ -97,13 +97,13 @@ def get_price_coinbase(token):
 
 
 def get_price_chainlink(token):
-    url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+symbol.split('-')[0]+'&tsyms='+symbol.split('-')[1]+'t'
+    url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+token.split('-')[0]+'&tsyms='+symbol.split('-')[1]+'t'
     time_start = time.time()
     response = requests.get(url)
 
     avg = {
-        'token': symbol.split('-')[0],
         'source': 'CHAINLINK',
+        'token': token.split('-')[0],
         'timestamp': response.json()['RAW'][symbol.split('-')[0]]['USDT']['LASTUPDATE'],
         'price': response.json()['RAW'][symbol.split('-')[0]]['USDT']['PRICE'],
         'volume24h': response.json()['RAW'][symbol.split('-')[0]]['USDT']['VOLUME24HOURTO'],
