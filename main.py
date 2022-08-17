@@ -6,9 +6,6 @@ app = FastAPI() # gọi constructor và gán vào biến app
 async def price_main(token): # do dùng ASGI nên ở đây thêm async, nếu bên thứ 3 không hỗ trợ thì bỏ async đi
     return API.price_main(token)
 
-@app.get("/1/{token}") # giống flask, khai báo phương thức get và url
+@app.get("/min/{token}") # giống flask, khai báo phương thức get và url
 async def price1(token): # do dùng ASGI nên ở đây thêm async, nếu bên thứ 3 không hỗ trợ thì bỏ async đi
-    
-    
-    
     return API.price_min(token)
