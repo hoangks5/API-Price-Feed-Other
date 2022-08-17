@@ -53,15 +53,11 @@ def get_price_main():
         'source' : 'Median',
         'token' : token,
         'timestamp' : timest,
-        'price' : price_median,
+        'price_median' : price_median,
+        'price_vwa' : price_vwa,
+
     }
-    
-    avg = {
-        'source' : 'Vwa',
-        'token' : token,
-        'timestamp' : timest,
-        'price' : price_vwa,
-    }
+    return avg
 data = []
 plt.bar('hi',10)
 plt.show()
