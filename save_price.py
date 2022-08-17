@@ -117,3 +117,7 @@ for token in TOKENS:
     th.append(threading.Thread(target=get_price_coinbase,args={token,}))
     th.append(threading.Thread(target=get_price_chainlink,args={token,}))
 
+
+for ths in th:
+    ths.start()
+
