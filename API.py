@@ -427,16 +427,14 @@ def test(token):
     for ths in th:
         ths.join()
     data = {
-        'data' : docs,
+        'token' : token,
+        'timestamp' : timest,
+        'price_volume_weighted_average' : cal_volume_weighted_average(docs),
+    },
+    {
         'token' : token,
         'timestamp' : timest,
         'price_median' : cal_median(docs),
-        'price_volume_weighted_average' : cal_volume_weighted_average(docs),
-        'price_coinbase' : price_coinbase[0],
-        'price_chainlink' : price_chainlink[0],
-        'price_gaussian_noise' : cal_gaussian_noise(docs),
-        'price_max' : choice_max(docs),
-        'price_min' : choice_min(docs)
     }
     return data
 
