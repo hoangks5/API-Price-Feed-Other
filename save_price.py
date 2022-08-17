@@ -71,3 +71,4 @@ def get_price_main():
         'timestamp' : timest,
         'price' : price_median,
     }
+    mycol.insert_one(avg)
