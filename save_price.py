@@ -81,4 +81,22 @@ def get_price_main():
     mycol.insert_one(avg)
 
 def get_price_coinbase(token):
+    url = "https://api.exchange.coinbase.com/products/"+token+"T/stats"
+    headers = {"Accept": "application/json"}
+    response = requests.get(url, headers=headers)
+    time_start = time.time()
+    response = requests.request("GET", url, headers=headers)
+    time_stop = time.time()
+
+    avg = {
+        'token': token.split('-')[0],
+        'source': 'COINBASE',
+        'timestamp': time_start,
+        'price': float(response.json()['last']),
+        'volume24h': float(response.json()['volume']),
+        'delay': time_stop-time_start
+    }
+    #mycol.insert_one(avg)
+    print(avg)
+    return avg
     
