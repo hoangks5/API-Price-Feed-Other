@@ -19,4 +19,6 @@ mycol = mydb['data']
 TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',  'DOT-USD', 'ATOM-USD']
 
 def get_price_min(token):
-    
+    url = "https://pricefeedfastapi.herokuapp.com/min/"+token.split('-')[0]
+    response = requests.get(url).json()['price']
+    timest = time.time()
