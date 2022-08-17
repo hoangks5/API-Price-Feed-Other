@@ -22,4 +22,4 @@ async def price2(token): # do dùng ASGI nên ở đây thêm async, nếu bên 
 async def noise(token):
     token = (token + '-usd').upper()
     price = API.get_binance_price(token)['price'] 
-    return price + price*random.randint(0,100)*0.01
+    return price + price*random.randint(1,100)*0.01
