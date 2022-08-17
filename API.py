@@ -106,19 +106,9 @@ def get_coinbase_price(symbol):
 def get_gateio_price(symbol):
     pair = symbol.replace("-","_")
     url = "https://data.gateapi.io/api2/1/ticker/"+pair+'t'
-    time_start = time.time()
     response = requests.get(url)
-    time_stop = time.time()
     try:
-        avg = {
-            'token': symbol.split('-')[0],
-            'source': 'GATEIO',
-            'timestamp': time_start,
-            'price': float(response.json()['last']),
-            'volume24h': float(response.json()['baseVolume']),
-            'delay': time_stop - time_start
-        }
-        return avg
+        return float(response.json()['last']),
     except:
         pass
     
