@@ -106,6 +106,4 @@ def get_price_chainlink(token):
         'timestamp': time_start,
         'price': response.json()['RAW'][token.split('-')[0]]['USDT']['PRICE'],
     }
-    #mycol.insert_one(avg)
-    print(avg)
-    return avg
+    mycol.insert_one(avg)
