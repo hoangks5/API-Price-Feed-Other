@@ -115,6 +115,4 @@ def show(token):
         ths.start()
     for ths in th:
         ths.join()
-   
-
     print(data)
