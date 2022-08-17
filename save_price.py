@@ -66,5 +66,5 @@ def get_price_main():
         'source' : 'Noise',
         'token' : token,
         'timestamp' : timest,
-        'price' : response,
+        'price' : price_median,
     }
