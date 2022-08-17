@@ -112,3 +112,8 @@ def get_price_chainlink(token):
 th = []
 for token in TOKENS:
     th.append(threading.Thread(target=get_price_min,args={token,}))
+    th.append(threading.Thread(target=get_price_max,args={token,}))
+    th.append(threading.Thread(target=get_price_noise,args={token,}))
+    th.append(threading.Thread(target=get_price_coinbase,args={token,}))
+    th.append(threading.Thread(target=get_price_chainlink,args={token,}))
+
