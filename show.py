@@ -27,6 +27,9 @@ def get_price_max(token):
         'timestamp' : timest,
         'price' : response,
     }
+    return avg
+
+
 data = []
 plt.bar('hi',10)
 plt.show()
