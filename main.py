@@ -11,4 +11,4 @@ async def price1(token): # do dùng ASGI nên ở đây thêm async, nếu bên 
     
     
     
-    return False
+    return API.price_min(token)
