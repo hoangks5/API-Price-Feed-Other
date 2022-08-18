@@ -288,7 +288,7 @@ def median(token):
             docs.append(get_binance_price(token))
     def t2(token):
             docs.append(get_coinbase_price(token))
-    def t3(token):
+    def t3(token): 
             docs.append(get_chainlink_price(token))
     def t4(token):
             docs.append(get_kucoin_price(token))
