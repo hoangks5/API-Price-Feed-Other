@@ -72,7 +72,7 @@ def get_price_coinbase(token):
         'timestamp': time_start,
         'price': float(response.json()['last']),
     }
-    return avg
+    return avg 
 
 
 def get_price_chainlink(token):
