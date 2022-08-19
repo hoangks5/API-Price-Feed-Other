@@ -133,4 +133,4 @@ def show(token):
     plt.show()
  
 
-show('ETH-USD') 
+show('ETH-USD')  
