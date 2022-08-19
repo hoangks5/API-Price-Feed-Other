@@ -311,7 +311,7 @@ def median(token):
         ths.join()
     req = []
     for val in docs:
-        if val != None :
+        if val != None : 
             req.append(val)
     docs = req
     data = {
