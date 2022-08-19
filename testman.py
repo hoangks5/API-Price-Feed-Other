@@ -79,7 +79,7 @@ def get_price_chainlink(token):
     url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='+token.split('-')[0]+'&tsyms='+token.split('-')[1]+'t'
     time_start = time.time()
     response = requests.get(url)
-
+ 
     avg = {
         'source': 'Chainlink',
         'token': token.split('-')[0],
