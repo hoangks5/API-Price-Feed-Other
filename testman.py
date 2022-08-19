@@ -27,7 +27,7 @@ def get_price_max(token):
         'token' : token,
         'timestamp' : timest,
         'price' : response,
-    }
+    } 
     return avg
 
 def get_price_noise(token):
