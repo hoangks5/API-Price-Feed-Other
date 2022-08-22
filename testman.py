@@ -114,7 +114,7 @@ def show(token):
     for ths in th:
         ths.start() 
     for ths in th:
-        ths.join()
+        ths.join() 
     print(data) 
     for i in data:
         if i['source'] == 'Min':
