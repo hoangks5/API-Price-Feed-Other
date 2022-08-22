@@ -115,7 +115,7 @@ def show(token):
         ths.start()
     for ths in th:
         ths.join()
-    print(data)
+    print(data) 
     for i in data:
         if i['source'] == 'Min':
             plt.bar(i['source'],i['price'],color='green')
