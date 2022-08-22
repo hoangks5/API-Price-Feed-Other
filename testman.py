@@ -131,5 +131,5 @@ def show(token):
             plt.bar('Median',i['price_median'],color='green')
             plt.bar('Vwa',i['price_vwa'],color='green')
     plt.show()
- 
+
 show('ETH-USD')
