@@ -112,7 +112,7 @@ def show(token):
     th.append(threading.Thread(target=t5,args={token,}))
     th.append(threading.Thread(target=t6,args={token,}))
     for ths in th:
-        ths.start()
+        ths.start() 
     for ths in th:
         ths.join()
     print(data) 
