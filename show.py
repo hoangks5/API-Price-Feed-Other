@@ -19,6 +19,10 @@ def show(token):
     noise_price = []
     coinbase_price = []
     chainlink_price = []
+    min_ts = []
+    max_ts = []
+    noise_ts = []
+    coinbase_ts = []
 
     
     
