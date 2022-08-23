@@ -10,6 +10,6 @@ myclient = pymongo.MongoClient("mongodb+srv://hoangks5:YrfvDz4Mt8xrrHxi@cluster0
 mydb = myclient['compare']
 mycol = mydb['data']
 
-datas = mycol.find({})
+datas = mycol.find({'token':'BTC-USD'})
 for data in datas:
     print(data)
