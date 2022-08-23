@@ -13,7 +13,7 @@ mycol = mydb['data']
 
 
 def show(token):
-    datas = mycol.find({'token':token.split('-')[0]})
+    datas = mycol.find({'token':token.split('-')[0]},'source':'Min')
     min_price = []
     max_price = []
     noise_price = []
