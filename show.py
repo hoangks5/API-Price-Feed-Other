@@ -31,3 +31,5 @@ def show(token):
         noise_price.append(data['Noise'])
         coinbase_price.append(data['Coinbase'])
         chainlink_price.append(data['CHAINLINK'])
+
+    print(min_price)
