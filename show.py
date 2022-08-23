@@ -13,3 +13,4 @@ mycol = mydb['data']
 datas = mycol.find({'token':'BTC'})
 for data in datas:
     print(data)
+
