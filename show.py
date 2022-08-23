@@ -23,6 +23,7 @@ def show(token):
     max_ts = []
     noise_ts = []
     coinbase_ts = []
+    chainlink_ts = []
 
     
     
