@@ -101,6 +101,7 @@ def t5(token):
     data.append(get_price_chainlink(token))
 def t6(token):
     data.append(get_price_main(token))
+    
 
 
 def show(token):
