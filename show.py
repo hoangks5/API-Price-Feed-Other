@@ -25,11 +25,8 @@ def show(token):
     coinbase_ts = []
     chainlink_ts = []
 
-    
-    
-    
     for data in datas:
-        min_price.append(data['Min'])
+        min_price.append(data['Min'],data['timestamp'])
         max_price.append(data['Max'])
         noise_price.append(data['Noise'])
         coinbase_price.append(data['Coinbase'])
