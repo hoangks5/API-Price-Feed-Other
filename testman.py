@@ -132,4 +132,4 @@ def show(token):
             plt.bar('Vwa',i['price_vwa'],color='green')
     plt.show()
 
-show('ETH-USD')
+show('ETH-USD') 
