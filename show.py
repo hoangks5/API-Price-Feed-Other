@@ -12,7 +12,7 @@ mycol = mydb['data']
 
 
 def show(token):
-    datas = mycol.find({'token':'BTC'})
+    datas = mycol.find({'token':token.split('-')[0]})
     for data in datas:
         print(data)
 
