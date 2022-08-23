@@ -15,15 +15,6 @@ mycol = mydb['data']
 def show(token):
     datas = mycol.find({'token':token.split('-')[0]},'source':'Min')
     min_price = []
-    max_price = []
-    noise_price = []
-    coinbase_price = []
-    chainlink_price = []
-    min_ts = []
-    max_ts = []
-    noise_ts = []
-    coinbase_ts = []
-    chainlink_ts = []
 
     for data in datas:
         min_price.append(data['Min'],data['timestamp'])
