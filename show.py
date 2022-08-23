@@ -14,6 +14,12 @@ mycol = mydb['data']
 
 def show(token):
     datas = mycol.find({'token':token.split('-')[0]})
+    min_price = []
+    max_price = []
+    noise_price = []
+    coinbase_price = []
+    
+    
+    
     for data in datas:
-        print(data)
-
+        mind
