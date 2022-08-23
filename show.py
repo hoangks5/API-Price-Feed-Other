@@ -17,12 +17,6 @@ def show(token):
     min_price = []
 
     for data in datas:
-        min_price.append(data['Min'],data['timestamp'])
-        max_price.append(data['Max'])
-        noise_price.append(data['Noise'])
-        coinbase_price.append(data['Coinbase'])
-        chainlink_price.append(data['CHAINLINK'])
-
-    print(min_price)
+        print(data)
 
 show('BTC-USD')
