@@ -120,5 +120,5 @@ def get_price(times,delay):
         for ths in th:
             ths.start()
         time.sleep(delay)
-        
+
 get_price(5,120)
