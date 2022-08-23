@@ -4,7 +4,7 @@ import time
 import requests
 import  threading
 import pymongo
-inport certifi
+import certifi
 
 
 
