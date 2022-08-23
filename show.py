@@ -15,6 +15,6 @@ TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',
 
 def show(token):
     token1 = token.split('-')[0]
-    datas = mycol.find({token:token1})
+    datas = mycol.find({})
     print(datas)
 show('BTC-USD')
