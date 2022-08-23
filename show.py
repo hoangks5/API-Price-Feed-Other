@@ -4,6 +4,9 @@ import time
 import requests
 import  threading
 import pymongo
+inport certifi
+
+
 
 client = pymongo.MongoClient("mongodb+srv://hoangks5:YrfvDz4Mt8xrrHxi@cluster0.tcbxc.mongodb.net/",tlsCAFile=certifi.where())
 mydb = client['compare']
