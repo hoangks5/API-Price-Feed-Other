@@ -121,4 +121,4 @@ def get_price(times,delay):
             ths.start()
         time.sleep(delay)
 
-get_price(5,120)
+get_price(5,120) 
