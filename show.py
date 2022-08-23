@@ -33,3 +33,5 @@ def show(token):
         chainlink_price.append(data['CHAINLINK'])
 
     print(min_price)
+
+show('BTC-USD')
