@@ -19,8 +19,9 @@ def show(token):
     noise_price = []
     coinbase_price = []
     chainlink_price = []
+
     
     
     
     for data in datas:
-        mind
+        
