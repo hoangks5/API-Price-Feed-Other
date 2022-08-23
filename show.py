@@ -15,7 +15,6 @@ mycol = mydb['data']
 def show(token):
     datas = mycol.find({'token':token.split('-')[0],'source':'Min'})
     min_price = []
-
     for data in datas:
         print(data)
 
