@@ -13,3 +13,4 @@ mydb = client['compare']
 mycol = mydb['data']
 TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',  'DOT-USD', 'ATOM-USD']
 
+def show(token)
